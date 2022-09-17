@@ -1,13 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
 import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+
+const Wrapper = styled.div`
+  background-color: #000;
+  width: 100%;
+  min-height: 100vh;
+  color: #a2a2a2;
+`;
 
 export default function PageWrapper({ children }: { children: JSX.Element }) {
   return (
-    <div>
+    <Wrapper>
       <Header />
       {children}
-      <Footer />
-    </div>
+    </Wrapper>
   );
 }
