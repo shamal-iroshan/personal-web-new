@@ -6,10 +6,8 @@ export default function PageWrapper({ children }: { children: JSX.Element }) {
   return (
     <div>
       <Header />
-
       {children}
-
-      {window.location.pathname !== '/' ? <Footer /> : ''}
+      <Footer />
     </div>
   );
 }
