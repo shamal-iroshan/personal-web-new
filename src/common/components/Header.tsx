@@ -7,7 +7,7 @@ import {
   ROUTE_CONTACT,
   ROUTE_HOME,
   ROUTE_PORTFOLIO,
-} from '../../routes';
+} from '../routes';
 
 const HeaderContainer = styled.div`
   display: flex;
