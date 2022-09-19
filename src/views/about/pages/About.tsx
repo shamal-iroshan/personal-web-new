@@ -4,8 +4,9 @@ import AnimatedText from '../../../common/components/AnimatedText';
 import CustomButton from '../../../common/components/CustomButton';
 
 const ContentContainer = styled.div`
-  position: fixed;
+  position: relative;
   max-width: 900px;
+  width: 900px;
   top: 100px;
   bottom: 100px;
   left: 50%;
@@ -13,15 +14,33 @@ const ContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media all and (max-width: 900px) {
+    flex-direction: column;
+    width: 100%;
+    top: 0;
+  }
 `;
 const ProfileImage = styled.img`
   width: 360px;
   height: 360px;
   object-fit: cover;
   border-radius: 16px;
+  @media all and (max-width: 1400px) {
+    width: 320px;
+    height: 320px;
+  }
+  @media all and (max-width: 900px) {
+    width: 100%;
+    height: max-content;
+    padding: 20px;
+  }
 `;
 const RightContainer = styled.div`
   margin-left: 100px;
+  @media all and (max-width: 900px) {
+    margin-left: 20px;
+    margin-bottom: 40px;
+  }
 `;
 const NameText = styled.h2`
   text-transform: uppercase;
@@ -31,6 +50,9 @@ const NameText = styled.h2`
   color: #fff;
   span {
     color: #4169e1;
+  }
+  @media all and (max-width: 1400px) {
+    font-size: 32px;
   }
 `;
 const DescriptionText = styled.p`
@@ -56,7 +78,7 @@ function About() {
         <NameText>
           shamal <span>iroshan</span>
         </NameText>
-        <AnimatedText textSize={20} />
+        <AnimatedText textSize={20} smallTextSize={16} />
         <div />
         <DescriptionText>
           My name is <span>David Parker</span>. I am a graphic designer, and
