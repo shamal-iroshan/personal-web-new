@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import AnimatedText from '../../../common/components/AnimatedText';
 import CustomButton from '../../../common/components/CustomButton';
+import LearnMoreDialog from '../components/LearnMoreDialog';
 
 const ContentContainer = styled.div`
   position: relative;
@@ -68,33 +69,40 @@ const DescriptionText = styled.p`
 `;
 
 function About() {
+  const [openLearnMore, setOpenLearnMore] = useState(false);
+
   return (
-    <ContentContainer>
-      <ProfileImage
-        src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
-        alt="profile"
-      />
-      <RightContainer>
-        <NameText>
-          shamal <span>iroshan</span>
-        </NameText>
-        <AnimatedText textSize={20} smallTextSize={16} />
-        <div />
-        <DescriptionText>
-          My name is <span>David Parker</span>. I am a graphic designer, and
-          I&apos;m very passionate and dedicated to my work. With 20 years
-          experience as a professional a graphic designer, I have acquired the
-          skills and knowledge.
-        </DescriptionText>
-        <CustomButton
-          text="learn more"
-          action={() => {
-            // eslint-disable-next-line no-console
-            console.log('test');
-          }}
+    <>
+      <ContentContainer>
+        <ProfileImage
+          src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          alt="profile"
         />
-      </RightContainer>
-    </ContentContainer>
+        <RightContainer>
+          <NameText>
+            shamal <span>iroshan</span>
+          </NameText>
+          <AnimatedText textSize={20} smallTextSize={16} />
+          <div />
+          <DescriptionText>
+            My name is <span>David Parker</span>. I am a graphic designer, and
+            I&apos;m very passionate and dedicated to my work. With 20 years
+            experience as a professional a graphic designer, I have acquired the
+            skills and knowledge.
+          </DescriptionText>
+          <CustomButton
+            text="learn more"
+            action={() => {
+              setOpenLearnMore(true);
+            }}
+          />
+        </RightContainer>
+      </ContentContainer>
+      <LearnMoreDialog
+        open={openLearnMore}
+        handleClose={() => setOpenLearnMore(false)}
+      />
+    </>
   );
 }
 
