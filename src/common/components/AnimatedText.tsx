@@ -1,13 +1,17 @@
+import useMediaQuery from '@mui/material/useMediaQuery';
 import React, { useEffect, useState } from 'react';
 import TextTransition, { presets } from 'react-text-transition';
 import styled from 'styled-components';
+import { Theme } from '@mui/material';
 
 interface AnimatedTextProps {
   texts?: string[];
   textSize?: number;
+  smallTextSize?: number;
 }
 interface TextProps {
   textSize: number;
+  smallTextSize: number;
 }
 
 const TransitionContainer = styled.div`
@@ -18,6 +22,9 @@ const StaticText = styled.span<TextProps>`
   font-size: ${(props) => props.textSize}px;
   font-weight: 700;
   color: #a2a2a2;
+  @media all and (max-width: 600px) {
+    font-size: ${(props) => props.smallTextSize}px;
+  }
 `;
 
 const TEXTS = ['Designer', 'Developer', 'Freelancer'];
@@ -25,8 +32,12 @@ const TEXTS = ['Designer', 'Developer', 'Freelancer'];
 export default function AnimatedText({
   texts = TEXTS,
   textSize = 25,
+  smallTextSize = 18,
 }: AnimatedTextProps) {
   const [index, setIndex] = useState(0);
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down('sm'),
+  );
 
   useEffect(() => {
     const intervalId = setInterval(
@@ -38,10 +49,15 @@ export default function AnimatedText({
 
   return (
     <TransitionContainer>
-      <StaticText textSize={textSize}>Creative&nbsp;</StaticText>
+      <StaticText textSize={textSize} smallTextSize={smallTextSize}>
+        Creative&nbsp;
+      </StaticText>
       <TextTransition
         springConfig={presets.wobbly}
-        style={{ color: '#fff', fontSize: textSize }}
+        style={{
+          color: '#fff',
+          fontSize: isSmallScreen ? smallTextSize : textSize,
+        }}
       >
         {texts[index % texts.length]}
       </TextTransition>

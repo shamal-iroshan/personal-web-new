@@ -6,7 +6,7 @@ import AnimatedText from '../../../common/components/AnimatedText';
 import CustomButton from '../../../common/components/CustomButton';
 
 const ContentContainer = styled.div`
-  position: fixed;
+  position: absolute;
   max-width: 900px;
   top: 100px;
   bottom: 100px;
@@ -16,6 +16,9 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media all and (max-width: 1300px) {
+    text-align: center;
+  }
 `;
 const AnimatedTextContainer = styled.div`
   margin-bottom: 40px;
@@ -28,6 +31,9 @@ const TitleText = styled.h1`
   margin-bottom: 20px;
   span {
     color: #4169e1;
+  }
+  @media all and (max-width: 600px) {
+    font-size: 40px;
   }
 `;
 
