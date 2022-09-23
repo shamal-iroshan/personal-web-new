@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { PRIMARY_BLUE, SECONDARY_WHITE } from '../../utils/colors';
 
 interface CustomButtonProps {
   text: string;
@@ -8,9 +9,9 @@ interface CustomButtonProps {
 
 const StyledButton = styled.button`
   text-transform: capitalize;
-  color: #fff;
+  color: ${SECONDARY_WHITE};
   display: inline-block;
-  background-color: #4169e1;
+  background-color: ${PRIMARY_BLUE};
   padding: 15px 40px;
   text-align: center;
   border-radius: 50px;

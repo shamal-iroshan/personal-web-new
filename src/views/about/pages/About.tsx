@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import AnimatedText from '../../../common/components/AnimatedText';
 import CustomButton from '../../../common/components/CustomButton';
 import LearnMoreDialog from '../components/LearnMoreDialog';
+import { GRAY, PRIMARY_BLUE, SECONDARY_WHITE } from '../../../utils/colors';
 
 const ContentContainer = styled.div`
-  position: relative;
+  position: absolute;
   max-width: 900px;
   width: 900px;
   top: 100px;
@@ -18,7 +19,7 @@ const ContentContainer = styled.div`
   @media all and (max-width: 900px) {
     flex-direction: column;
     width: 100%;
-    top: 0;
+    top: 200px;
   }
 `;
 const ProfileImage = styled.img`
@@ -31,9 +32,12 @@ const ProfileImage = styled.img`
     height: 320px;
   }
   @media all and (max-width: 900px) {
-    width: 100%;
-    height: max-content;
+    width: 300px;
+    height: 300px;
     padding: 20px;
+  }
+  @media all and (max-height: 600px) {
+    display: none;
   }
 `;
 const RightContainer = styled.div`
@@ -48,9 +52,9 @@ const NameText = styled.h2`
   margin-bottom: 15px;
   font-size: 40px;
   font-weight: 800;
-  color: #fff;
+  color: ${SECONDARY_WHITE};
   span {
-    color: #4169e1;
+    color: ${PRIMARY_BLUE};
   }
   @media all and (max-width: 1400px) {
     font-size: 32px;
@@ -61,10 +65,13 @@ const DescriptionText = styled.p`
   font-size: 16px;
   word-wrap: break-word;
   font-weight: 400;
-  color: #a2a2a2;
+  color: ${GRAY};
   span {
-    color: #ffffff;
+    color: ${SECONDARY_WHITE};
     font-weight: 700;
+  }
+  @media all and (max-width: 900px) {
+    padding-right: 10px;
   }
 `;
 

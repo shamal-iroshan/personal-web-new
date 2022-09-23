@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
+import { BLACK, GRAY } from '../utils/colors';
 
 const Wrapper = styled.div`
-  background-color: #000;
+  background-color: ${BLACK};
   width: 100%;
   min-height: 100vh;
-  color: #a2a2a2;
+  color: ${GRAY};
 `;
 
 export default function PageWrapper({ children }: { children: JSX.Element }) {

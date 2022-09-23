@@ -24,6 +24,7 @@ import {
   ROUTE_HOME,
   ROUTE_PORTFOLIO,
 } from '../routes';
+import { SECONDARY_WHITE } from '../../utils/colors';
 
 const MaterialStyledGrid = materialStyled(Grid)(({ theme }) => ({
   maxWidth: '900px',
@@ -53,10 +54,10 @@ const MenuButton = materialStyled(IconButton)(({ theme }) => ({
 const PageTitle = styled.h1`
   font-weight: 800;
   cursor: pointer;
-  color: #ffffff;
+  color: ${SECONDARY_WHITE};
 `;
 const StyledP = styled.p`
-  color: #ffffff;
+  color: ${SECONDARY_WHITE};
   font-size: 16px;
   margin-left: 30px;
   cursor: pointer;

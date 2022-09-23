@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import TextTransition, { presets } from 'react-text-transition';
 import styled from 'styled-components';
 import { Theme } from '@mui/material';
+import { GRAY, SECONDARY_WHITE } from '../../utils/colors';
 
 interface AnimatedTextProps {
   texts?: string[];
@@ -21,7 +22,7 @@ const TransitionContainer = styled.div`
 const StaticText = styled.span<TextProps>`
   font-size: ${(props) => props.textSize}px;
   font-weight: 700;
-  color: #a2a2a2;
+  color: ${GRAY};
   @media all and (max-width: 600px) {
     font-size: ${(props) => props.smallTextSize}px;
   }
@@ -55,7 +56,7 @@ export default function AnimatedText({
       <TextTransition
         springConfig={presets.wobbly}
         style={{
-          color: '#fff',
+          color: SECONDARY_WHITE,
           fontSize: isSmallScreen ? smallTextSize : textSize,
         }}
       >
