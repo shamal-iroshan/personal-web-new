@@ -19,7 +19,6 @@ import BookIcon from '@mui/icons-material/Book';
 import IconButton from '@mui/material/IconButton';
 import {
   ROUTE_ABOUT,
-  ROUTE_BLOG,
   ROUTE_CONTACT,
   ROUTE_HOME,
   ROUTE_PORTFOLIO,
@@ -140,7 +139,7 @@ export default function Header() {
           </ListItemButton>
         </ListItem>
         <ListItem
-          onClick={() => navigatePage(ROUTE_BLOG)}
+          onClick={() => window.open(process.env.REACT_APP_BLOG_URL, '_self')}
           key="blog"
           disablePadding
         >
@@ -166,7 +165,11 @@ export default function Header() {
             Portfolio
           </StyledP>
           <StyledP onClick={() => navigatePage(ROUTE_CONTACT)}>Contact</StyledP>
-          <StyledP onClick={() => navigatePage(ROUTE_BLOG)}>Blog</StyledP>
+          <StyledP
+            onClick={() => window.open(process.env.REACT_APP_BLOG_URL, '_self')}
+          >
+            Blog
+          </StyledP>
         </LinkContainer>
         <MenuButton onClick={toggleDrawer(true)}>
           <MenuIcon color="secondary" />
