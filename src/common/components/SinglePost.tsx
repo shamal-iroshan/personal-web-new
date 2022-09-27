@@ -5,6 +5,7 @@ import { SECONDARY_WHITE } from '../../utils/colors';
 interface SinglePostProps {
   image: string;
   text?: string;
+  link?: string;
 }
 
 const scale = keyframes`
@@ -34,6 +35,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 16px;
+  object-fit: cover;
   &:hover {
     cursor: pointer;
     animation: ${scale} 0.5s forwards;
@@ -48,15 +50,21 @@ const DetailContainer = styled.div`
   cursor: pointer;
   padding: 20px;
   color: ${SECONDARY_WHITE};
-  background-color: #282c34bb;
+  background-color: #282c34cc;
   &:hover {
     animation: ${visible} 0.2s forwards;
   }
 `;
 
-export default function SinglePost({ image, text }: SinglePostProps) {
+export default function SinglePost({ image, text, link }: SinglePostProps) {
   return (
-    <ImageContainer>
+    <ImageContainer
+      onClick={() => {
+        if (link) {
+          window.open(link, '_blank');
+        }
+      }}
+    >
       <DetailContainer>
         <p>{text}</p>
       </DetailContainer>

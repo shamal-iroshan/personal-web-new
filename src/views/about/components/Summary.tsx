@@ -82,11 +82,16 @@ export default function Summary() {
           }}
         />
         <Typography sx={{ fontSize: '17px' }}>
-          +hello@shamaliroshan.com
+          hello@shamaliroshan.com
         </Typography>
       </InfoContainer>
       <ButtonContainer>
-        <CustomButton text="download CV" />
+        <CustomButton
+          text="download CV"
+          action={() =>
+            window.open('https://document.shamaliroshan.com/CV.pdf', '_blank')
+          }
+        />
       </ButtonContainer>
     </>
   );

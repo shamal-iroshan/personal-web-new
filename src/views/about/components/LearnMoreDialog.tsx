@@ -52,7 +52,7 @@ export default function LearnMoreDialog({
         })}
       >
         <ProfileImage
-          src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          src="https://document.shamaliroshan.com/my-image.jpg"
           alt="profile"
         />
         <ModalTitle>

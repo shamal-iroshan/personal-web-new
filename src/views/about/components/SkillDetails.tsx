@@ -10,8 +10,8 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-import HotelIcon from '@mui/icons-material/Hotel';
-import RepeatIcon from '@mui/icons-material/Repeat';
+import SchoolIcon from '@mui/icons-material/School';
+import TaskIcon from '@mui/icons-material/Task';
 import Typography from '@mui/material/Typography';
 import { PRIMARY_BLUE, SECONDARY_WHITE } from '../../../utils/colors';
 import LinearProgressWithLabel from './LinearProgressWithLabel';
@@ -79,25 +79,94 @@ export default function SkillDetails() {
               align="right"
               variant="body2"
             >
-              9:30 am
+              2016
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
-              <TimelineDot>
-                <FastfoodIcon />
+              <TimelineDot color="primary">
+                <TaskIcon />
               </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant="h6" component="span">
-                Eat
+                O/L Examination
               </Typography>
-              <Typography>Because you need strength</Typography>
+              <Typography>
+                Passed O/L examination with 4A, 4B, and 1C pass
+              </Typography>
+            </TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelineOppositeContent
+              sx={{ m: 'auto 0' }}
+              align="right"
+              variant="body2"
+            >
+              2017
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineConnector />
+              <TimelineDot color="primary">
+                <SchoolIcon />
+              </TimelineDot>
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent sx={{ py: '12px', px: 2 }}>
+              <Typography variant="h6" component="span">
+                Diploma in IT
+              </Typography>
+              <Typography>
+                Did the diploma on information technology at Esoft
+              </Typography>
+            </TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelineOppositeContent
+              sx={{ m: 'auto 0' }}
+              align="right"
+              variant="body2"
+            >
+              2017
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineConnector />
+              <TimelineDot color="primary">
+                <SchoolIcon />
+              </TimelineDot>
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent sx={{ py: '12px', px: 2 }}>
+              <Typography variant="h6" component="span">
+                Diploma in English
+              </Typography>
+              <Typography>Did the diploma on English at Esoft</Typography>
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
             <TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2">
-              10:00 am
+              2019
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineConnector />
+              <TimelineDot color="primary">
+                <TaskIcon />
+              </TimelineDot>
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent sx={{ py: '12px', px: 2 }}>
+              <Typography variant="h6" component="span">
+                A/L Examination
+              </Typography>
+              <Typography>
+                Did A/L examination on technlogy stream and passed with 2B, and
+                1C pass
+              </Typography>
+            </TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2">
+              2019
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
@@ -108,39 +177,31 @@ export default function SkillDetails() {
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant="h6" component="span">
-                Code
+                Diploma in Software Engineering
               </Typography>
-              <Typography>Because it&apos;s awesome!</Typography>
+              <Typography>
+                Followed the diploma in software engineering at IJSE
+              </Typography>
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
+            <TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2">
+              2022
+            </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
-              <TimelineDot color="primary" variant="outlined">
-                <HotelIcon />
-              </TimelineDot>
-              <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2 }}>
-              <Typography variant="h6" component="span">
-                Sleep
-              </Typography>
-              <Typography>Because you need rest</Typography>
-            </TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineSeparator>
-              <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-              <TimelineDot color="secondary">
-                <RepeatIcon />
+              <TimelineDot color="primary">
+                <LaptopMacIcon />
               </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant="h6" component="span">
-                Repeat
+                Degree in Software Engineering
               </Typography>
-              <Typography>Because this is the life you love!</Typography>
+              <Typography>
+                Started following the degree in software engineering at Esoft
+              </Typography>
             </TimelineContent>
           </TimelineItem>
         </Timeline>
@@ -158,7 +219,7 @@ export default function SkillDetails() {
               align="right"
               variant="body2"
             >
-              9:30 am
+              2021/02 - 2021/06
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
@@ -169,14 +230,16 @@ export default function SkillDetails() {
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant="h6" component="span">
-                Eat
+                Intern
               </Typography>
-              <Typography>Because you need strength</Typography>
+              <Typography>
+                Trained as a intern software engineer at Fcodelabs
+              </Typography>
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
             <TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2">
-              10:00 am
+              2021/06 - 2022/10
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
@@ -187,39 +250,31 @@ export default function SkillDetails() {
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant="h6" component="span">
-                Code
+                Associate Software Engineer
               </Typography>
-              <Typography>Because it&apos;s awesome!</Typography>
+              <Typography>
+                Worked as an associate software engineer at Fcodelabs
+              </Typography>
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
+            <TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2">
+              2022/10 - preset
+            </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
-              <TimelineDot color="primary" variant="outlined">
-                <HotelIcon />
-              </TimelineDot>
-              <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2 }}>
-              <Typography variant="h6" component="span">
-                Sleep
-              </Typography>
-              <Typography>Because you need rest</Typography>
-            </TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineSeparator>
-              <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-              <TimelineDot color="secondary">
-                <RepeatIcon />
+              <TimelineDot color="primary">
+                <LaptopMacIcon />
               </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant="h6" component="span">
-                Repeat
+                Software Engineer
               </Typography>
-              <Typography>Because this is the life you love!</Typography>
+              <Typography>
+                Working as a software engineer at Fcodelabs
+              </Typography>
             </TimelineContent>
           </TimelineItem>
         </Timeline>

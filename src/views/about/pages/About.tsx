@@ -82,7 +82,7 @@ function About() {
     <>
       <ContentContainer>
         <ProfileImage
-          src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          src="https://document.shamaliroshan.com/my-image.jpg"
           alt="profile"
         />
         <RightContainer>
@@ -92,10 +92,12 @@ function About() {
           <AnimatedText textSize={20} smallTextSize={16} />
           <div />
           <DescriptionText>
-            My name is <span>David Parker</span>. I am a graphic designer, and
-            I&apos;m very passionate and dedicated to my work. With 20 years
-            experience as a professional a graphic designer, I have acquired the
-            skills and knowledge.
+            My name is <span>Shamal iroshan</span>. I am an software engineer
+            with more than 1 year of industry experience in web application
+            development, backend development and DevOps experience in AWS and
+            GCP. And I’m interested in microcontrollers, electronics and
+            robotics. Also, a hard-working individual that is seeking for new
+            opportunities to increase my knowledge in this field.
           </DescriptionText>
           <CustomButton
             text="learn more"

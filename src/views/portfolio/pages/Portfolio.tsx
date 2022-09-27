@@ -4,6 +4,7 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import { PRIMARY_BLUE, SECONDARY_WHITE } from '../../../utils/colors';
 import SinglePost from '../../../common/components/SinglePost';
+import portfolioData from '../../../utils/portfolioData';
 
 const ContentContainer = styled.div`
   display: flex;
@@ -57,10 +58,14 @@ function Portfolio() {
             gap: '30px',
           }}
         >
-          <SinglePost
-            image="https://cdn.pixabay.com/photo/2020/12/16/07/30/girl-5835891_960_720.jpg"
-            text="test"
-          />
+          {portfolioData.data.map((item) => (
+            <SinglePost
+              key={item.id}
+              image={item.image}
+              text={item.description}
+              link={item.link}
+            />
+          ))}
         </Grid>
       </Grid>
     </ContentContainer>
