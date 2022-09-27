@@ -37,6 +37,12 @@ h1, h2, h3, h4, h5, h6, p {
   line-height: 150%;
   letter-spacing: -0.02em;
 }
+input {
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
