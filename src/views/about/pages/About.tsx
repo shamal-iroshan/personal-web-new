@@ -4,6 +4,8 @@ import AnimatedText from '../../../common/components/AnimatedText';
 import CustomButton from '../../../common/components/CustomButton';
 import LearnMoreDialog from '../components/LearnMoreDialog';
 import { GRAY, PRIMARY_BLUE, SECONDARY_WHITE } from '../../../utils/colors';
+import { useAppSelector } from '../../../store/types';
+import { selectConfig } from '../../home/slice/configSlice';
 
 const ContentContainer = styled.div`
   position: absolute;
@@ -77,28 +79,24 @@ const DescriptionText = styled.p`
 
 function About() {
   const [openLearnMore, setOpenLearnMore] = useState(false);
+  const config = useAppSelector(selectConfig);
 
   return (
     <>
       <ContentContainer>
-        <ProfileImage
-          src="https://document.shamaliroshan.com/my-image.jpg"
-          alt="profile"
-        />
+        <ProfileImage src={config?.profileImageURL} alt="profile" />
         <RightContainer>
           <NameText>
-            shamal <span>iroshan</span>
+            {config?.homeTitle.split(' ')[0]}{' '}
+            <span>{config?.homeTitle.split(' ')[1]}</span>
           </NameText>
-          <AnimatedText textSize={20} smallTextSize={16} />
+          <AnimatedText
+            texts={config?.animatedText}
+            textSize={20}
+            smallTextSize={16}
+          />
           <div />
-          <DescriptionText>
-            My name is <span>Shamal iroshan</span>. I am an software engineer
-            with more than 1 year of industry experience in web application
-            development, backend development and DevOps experience in AWS and
-            GCP. And I’m interested in microcontrollers, electronics and
-            robotics. Also, a hard-working individual that is seeking for new
-            opportunities to increase my knowledge in this field.
-          </DescriptionText>
+          <DescriptionText>{config?.aboutDescription}</DescriptionText>
           <CustomButton
             text="learn more"
             action={() => {

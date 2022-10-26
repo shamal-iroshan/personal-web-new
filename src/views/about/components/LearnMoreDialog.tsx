@@ -7,6 +7,8 @@ import { PRIMARY_BLUE, SECONDARY_WHITE } from '../../../utils/colors';
 import Summary from './Summary';
 import AboutDetails from './AboutDetails';
 import SkillDetails from './SkillDetails';
+import { useAppSelector } from '../../../store/types';
+import { selectConfig } from '../../home/slice/configSlice';
 
 interface LearnMoreDialogProps {
   open: boolean;
@@ -32,6 +34,8 @@ export default function LearnMoreDialog({
   open,
   handleClose,
 }: LearnMoreDialogProps) {
+  const config = useAppSelector(selectConfig);
+
   return (
     <Dialog
       open={open}
@@ -51,20 +55,22 @@ export default function LearnMoreDialog({
           },
         })}
       >
-        <ProfileImage
-          src="https://document.shamaliroshan.com/my-image.jpg"
-          alt="profile"
-        />
+        <ProfileImage src={config?.profileImageURL} alt="profile" />
         <ModalTitle>
-          shamal <span>iroshan</span>
+          {config?.homeTitle.split(' ')[0]}{' '}
+          <span>{config?.homeTitle.split(' ')[1]}</span>
         </ModalTitle>
-        <AnimatedText textSize={20} smallTextSize={15} />
+        <AnimatedText
+          texts={config?.animatedText}
+          textSize={20}
+          smallTextSize={15}
+        />
 
-        <Summary />
+        <Summary config={config} />
 
-        <AboutDetails />
+        <AboutDetails config={config} />
 
-        <SkillDetails />
+        <SkillDetails config={config} />
       </Grid>
     </Dialog>
   );

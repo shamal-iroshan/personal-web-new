@@ -8,6 +8,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import styled from 'styled-components';
 import CustomButton from '../../../common/components/CustomButton';
 import { PRIMARY_BLUE } from '../../../utils/colors';
+import { Config } from '../../home/types';
 
 const InfoContainer = styled.div`
   border-bottom: 1px dashed hsla(0, 0%, 100%, 0.15);
@@ -23,7 +24,11 @@ const ButtonContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-export default function Summary() {
+interface SummaryProps {
+  config?: Config;
+}
+
+export default function Summary({ config }: SummaryProps) {
   return (
     <>
       <InfoContainer>
@@ -35,7 +40,7 @@ export default function Summary() {
             color: PRIMARY_BLUE,
           }}
         />
-        <Typography sx={{ fontSize: '17px' }}>shamal iroshan</Typography>
+        <Typography sx={{ fontSize: '17px' }}>{config?.name}</Typography>
       </InfoContainer>
       <InfoContainer>
         <CalendarMonthIcon
@@ -46,7 +51,7 @@ export default function Summary() {
             color: PRIMARY_BLUE,
           }}
         />
-        <Typography sx={{ fontSize: '17px' }}>02.10.2000</Typography>
+        <Typography sx={{ fontSize: '17px' }}>{config?.dateOfBirth}</Typography>
       </InfoContainer>
       <InfoContainer>
         <LocationOnIcon
@@ -57,9 +62,7 @@ export default function Summary() {
             color: PRIMARY_BLUE,
           }}
         />
-        <Typography sx={{ fontSize: '17px' }}>
-          Gonapola Junction, Horana, Srilanka
-        </Typography>
+        <Typography sx={{ fontSize: '17px' }}>{config?.address}</Typography>
       </InfoContainer>
       <InfoContainer>
         <CallIcon
@@ -70,7 +73,7 @@ export default function Summary() {
             color: PRIMARY_BLUE,
           }}
         />
-        <Typography sx={{ fontSize: '17px' }}>+94 75 2736 788</Typography>
+        <Typography sx={{ fontSize: '17px' }}>{config?.phone}</Typography>
       </InfoContainer>
       <InfoContainer>
         <EmailIcon
@@ -81,16 +84,12 @@ export default function Summary() {
             color: PRIMARY_BLUE,
           }}
         />
-        <Typography sx={{ fontSize: '17px' }}>
-          hello@shamaliroshan.com
-        </Typography>
+        <Typography sx={{ fontSize: '17px' }}>{config?.email}</Typography>
       </InfoContainer>
       <ButtonContainer>
         <CustomButton
           text="download CV"
-          action={() =>
-            window.open('https://document.shamaliroshan.com/CV.pdf', '_blank')
-          }
+          action={() => window.open(config?.cvURL, '_blank')}
         />
       </ButtonContainer>
     </>

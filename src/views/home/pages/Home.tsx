@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { ROUTE_CONTACT } from '../../../common/routes';
 import AnimatedText from '../../../common/components/AnimatedText';
 import CustomButton from '../../../common/components/CustomButton';
+import { useAppSelector } from '../../../store/types';
+import { selectConfig } from '../slice/configSlice';
 
 const ContentContainer = styled.div`
   position: absolute;
@@ -39,14 +41,16 @@ const TitleText = styled.h1`
 
 function Home() {
   const navigate = useNavigate();
+  const config = useAppSelector(selectConfig);
 
   return (
     <ContentContainer>
       <TitleText>
-        Shamal <span>Iroshan</span>
+        {config?.homeTitle.split(' ')[0]}{' '}
+        <span>{config?.homeTitle.split(' ')[1]}</span>
       </TitleText>
       <AnimatedTextContainer>
-        <AnimatedText />
+        <AnimatedText texts={config?.animatedText} />
       </AnimatedTextContainer>
       <CustomButton
         text="get in touch"

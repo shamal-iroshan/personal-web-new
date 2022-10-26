@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
+// eslint-disable-next-line import/no-cycle
 import rootReducer from './rootReducer';
+// eslint-disable-next-line import/no-cycle
 import rootSaga from './rootSaga';
 
 const sagMiddleWare = createSagaMiddleware();

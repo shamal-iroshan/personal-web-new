@@ -9,7 +9,7 @@ export enum ApiRequestMethod {
 }
 
 export enum ApiEndpointUrl {
-  TEMP_URL = '/temp/temp',
+  GET_CONFIG = 'config/active',
 }
 
 export function decodePlaceHolder(input: string, placeholders: object): string {
