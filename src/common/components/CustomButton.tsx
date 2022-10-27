@@ -5,6 +5,7 @@ import { PRIMARY_BLUE, SECONDARY_WHITE } from '../../utils/colors';
 interface CustomButtonProps {
   text: string;
   action?: () => void;
+  disable?: boolean;
 }
 
 const StyledButton = styled.button`
@@ -19,8 +20,19 @@ const StyledButton = styled.button`
   cursor: pointer;
   outline: none;
   border: none;
+  ':disabled' {
+    opacity: 0.5;
+  }
 `;
 
-export default function CustomButton({ text, action }: CustomButtonProps) {
-  return <StyledButton onClick={action}>{text}</StyledButton>;
+export default function CustomButton({
+  text,
+  action,
+  disable,
+}: CustomButtonProps) {
+  return (
+    <StyledButton onClick={action} disabled={disable}>
+      {text}
+    </StyledButton>
+  );
 }

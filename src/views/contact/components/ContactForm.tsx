@@ -1,8 +1,13 @@
 import Grid from '@mui/material/Grid';
 import React from 'react';
 import styled from 'styled-components';
+import BeatLoader from 'react-spinners/BeatLoader';
 import CustomButton from '../../../common/components/CustomButton';
-import errorToast from '../../about/components/toast/errorToast';
+import { useAppDispatch, useAppSelector } from '../../../store/types';
+import {
+  contactActions,
+  selectCreateMessageIsLoading,
+} from '../slice/contactSlice';
 
 const StyledForm = styled.form`
   width: 100%;
@@ -34,25 +39,65 @@ const CustomTextArea = styled.textarea`
 `;
 
 export default function ContactForm() {
+  const dispatch = useAppDispatch();
+  const sendMessageIsLoading = useAppSelector(selectCreateMessageIsLoading);
+
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    errorToast('Oops!', 'This function is comming soon.');
+    // @ts-ignore
+    const name = event.target.elements.name.value;
+    // @ts-ignore
+    const email = event.target.elements.email.value;
+    // @ts-ignore
+    const message = event.target.elements.message.value;
+
+    dispatch(
+      contactActions.createMessage({
+        name,
+        email,
+        message,
+        date: new Date().toISOString(),
+      }),
+    );
+
+    // @ts-ignore
+    // eslint-disable-next-line no-param-reassign
+    event.target.elements.name.value = '';
+    // @ts-ignore
+    // eslint-disable-next-line no-param-reassign
+    event.target.elements.email.value = '';
+    // @ts-ignore
+    // eslint-disable-next-line no-param-reassign
+    event.target.elements.message.value = '';
   };
 
   return (
     <StyledForm onSubmit={onSubmit}>
       <Grid container columnSpacing={4} rowSpacing={3}>
         <Grid item xs={12} md={6}>
-          <CustomTextBox type="text" placeholder="Name" />
+          <CustomTextBox required type="text" placeholder="Name" name="name" />
         </Grid>
         <Grid item xs={12} md={6}>
-          <CustomTextBox type="email" placeholder="Email" />
+          <CustomTextBox
+            required
+            type="email"
+            placeholder="Email"
+            name="email"
+          />
         </Grid>
         <Grid item xs={12} md={12}>
-          <CustomTextArea cols={30} rows={4} />
+          <CustomTextArea required cols={30} rows={4} name="message" />
         </Grid>
-        <Grid item>
-          <CustomButton text="Submit message" />
+        <Grid item display="flex" alignItems="center">
+          <CustomButton text="Submit message" disable={sendMessageIsLoading} />
+          {sendMessageIsLoading && (
+            <BeatLoader
+              color="#718096"
+              margin={2}
+              size={12}
+              style={{ marginLeft: 30 }}
+            />
+          )}
         </Grid>
       </Grid>
     </StyledForm>

@@ -11,6 +11,7 @@ export enum ApiRequestMethod {
 export enum ApiEndpointUrl {
   GET_CONFIG = 'config/active',
   GET_PORTFOLIOS = 'portfolio',
+  CREATE_MESSAGE = 'message',
 }
 
 export function decodePlaceHolder(input: string, placeholders: object): string {
