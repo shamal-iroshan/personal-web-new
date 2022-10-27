@@ -2,7 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import {
   ApiEndpointUrl,
   ApiRequestMethod,
-  PublicApiRequest,
+  publicApiRequest,
 } from '../../../utils/apiService';
 import { Config } from '../types';
 // eslint-disable-next-line import/no-cycle
@@ -10,7 +10,7 @@ import { configActions } from '../slice/configSlice';
 import errorToast from '../../about/components/toast/errorToast';
 
 async function callApi() {
-  return PublicApiRequest(ApiRequestMethod.GET, ApiEndpointUrl.GET_CONFIG);
+  return publicApiRequest(ApiRequestMethod.GET, ApiEndpointUrl.GET_CONFIG);
 }
 
 export default function* callGetConfigSaga() {

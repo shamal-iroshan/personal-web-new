@@ -10,6 +10,7 @@ export enum ApiRequestMethod {
 
 export enum ApiEndpointUrl {
   GET_CONFIG = 'config/active',
+  GET_PORTFOLIOS = 'portfolio',
 }
 
 export function decodePlaceHolder(input: string, placeholders: object): string {
@@ -40,7 +41,7 @@ export function appendQueryParameters(
   return input + result;
 }
 
-export async function PublicApiRequest(
+export async function publicApiRequest(
   method: ApiRequestMethod,
   url: ApiEndpointUrl | string,
   data?: object,
