@@ -1,3 +1,7 @@
+# Status of web page
+
+![shamaliroshancom](https://cronitor.io/badges/t9eCMl/production/j6-CoqLGu5Oyw5RjV_Ry0eKvyZM.svg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
