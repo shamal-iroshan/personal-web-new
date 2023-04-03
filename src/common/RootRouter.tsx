@@ -5,6 +5,7 @@ import {
   ROUTE_ABOUT,
   ROUTE_PORTFOLIO,
   ROUTE_CONTACT,
+  ROUTE_MAINTENANCE,
 } from './routes';
 import Home from '../views/home/pages/Home';
 import About from '../views/about/pages/About';
@@ -12,6 +13,7 @@ import Portfolio from '../views/portfolio/pages/Portfolio';
 import Contact from '../views/contact/pages/Contact';
 import NoMatch from '../views/noMatch/pages/NoMatch';
 import PageWrapper from './PageWrapper';
+import UnderMaintenance from '../views/underMaintenance/page/UnderMaintenance';
 
 export default function RootRouter() {
   const location = useLocation();
@@ -56,6 +58,7 @@ export default function RootRouter() {
           </PageWrapper>
         }
       />
+      <Route path={ROUTE_MAINTENANCE} element={<UnderMaintenance />} />
       <Route path="/" element={<Navigate to={ROUTE_HOME} replace />} />
       <Route path="*" element={<NoMatch />} />
     </Routes>
