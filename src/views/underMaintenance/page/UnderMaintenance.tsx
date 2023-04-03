@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import maintenanceImage from '../../../assets/img/maintenance.png';
+import { useAppDispatch, useAppSelector } from '../../../store/types';
+import { configActions, selectConfig } from '../../home/slice/configSlice';
+import { ROUTE_MAINTENANCE } from '../../../common/routes';
 
 const MaintenanceWrapper = styled.div`
   padding: 8%;
@@ -27,6 +31,20 @@ const MaintenanceWrapper = styled.div`
 `;
 
 export default function UnderMaintenance() {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const config = useAppSelector(selectConfig);
+
+  useEffect(() => {
+    dispatch(configActions.getConfig());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (config && config.underMaintenance) {
+      navigate(ROUTE_MAINTENANCE, { replace: true });
+    }
+  }, [config, navigate]);
+
   return (
     <MaintenanceWrapper>
       <img src={maintenanceImage} className="imgcenter" alt="maintenance" />
