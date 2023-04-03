@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import maintenanceImage from '../../../assets/img/maintenance.png';
 import { useAppDispatch, useAppSelector } from '../../../store/types';
 import { configActions, selectConfig } from '../../home/slice/configSlice';
-import { ROUTE_MAINTENANCE } from '../../../common/routes';
+import { ROUTE_HOME } from '../../../common/routes';
 
 const MaintenanceWrapper = styled.div`
   padding: 8%;
@@ -40,8 +40,8 @@ export default function UnderMaintenance() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (config && config.underMaintenance) {
-      navigate(ROUTE_MAINTENANCE, { replace: true });
+    if (config && !config.underMaintenance) {
+      navigate(ROUTE_HOME, { replace: true });
     }
   }, [config, navigate]);
 
